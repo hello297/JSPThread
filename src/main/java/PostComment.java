@@ -37,8 +37,8 @@ public class PostComment extends HttpServlet {
         String user = ";" + request.getParameter("user");
         String comment = request.getParameter("comment");
 
-        //String path = getServletContext().getRealPath("/") + "comments.txt";
-        String path = System.getenv("OPENSHIFT_DATA_DIR") + "comments.txt";
+        String path = getServletContext().getRealPath("/") + "comments.txt";
+        //String path = System.getenv("OPENSHIFT_DATA_DIR") + "comments.txt";
         
         File file = new File(path);
         if (!file.exists()) {
